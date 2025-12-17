@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Barcelona | Official Fan Page</title>
+ <style>
+    
+    /* ===== General Style ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      text-align: center;
+      background: linear-gradient(#0000FF, #FF0000);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+   /* ===== Header ===== */
+header {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 45px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid rgba(255, 217, 0, 0.3);
+}
+
+.logo img {
+  width: 85px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* ===== Frosted Glass Navbar ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 45px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.35); /* semi-transparent */
+  backdrop-filter: blur(12px); /* frosted glass */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* NAV LIST */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+/* LINKS */
+.navbar ul li a {
+  text-decoration: none;
+  color: #d6d6d6;
+  font-size: 19px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active section glow */
+.navbar ul li a.active {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+/* Hover effect */
+.navbar ul li a:hover {
+  color: gold;
+  transform: scale(1.1);
+}
+
+/* Underline animation */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: gold;
+  bottom: -6px;
+  left: 0;
+  transition: 0.3s ease;
+  border-radius: 3px;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a.active::after {
+  width: 100%;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .navbar ul {
+    gap: 15px;
+  }
+  .navbar ul li a {
+    font-size: 16px;
+  }
+}
+
+
+
+    /* ===== Hero Section ===== */
+.hero {
+  padding: 120px 20px;
+  background-image: url('https://media.wired.com/photos/65e9c2531f92e8ba51a879e1/3:2/w_1600,c_limit/ain7_20171213_fcb_vis_futur-camp-nou_campus_aerial_1_night.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+/* Title */
+.hero h2 {
+  font-size: 58px;
+  margin-bottom: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  /* GOLD text without blur */
+  color: #ffcb00;
+  animation: glowGold 3s ease-in-out infinite, slideIn 1.5s ease;
+}
+
+/* Glow animation */
+@keyframes glowGold {
+  0%, 100% { text-shadow: 0 0 10px #ffcb00; }
+  50% { text-shadow: 0 0 25px #ffd700; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtitle (optional improve) */
+.hero p {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.hero button {
+  background: rgba(255, 203, 0, 0.9);
+  color: black;
+  padding: 14px 30px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Hover effect */
+.hero button:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 25px gold;
+}
+
+
+    /* ===== Player Section ===== */
+    #players {
+      padding: 60px 20px;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    .player {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      transition: 0.3s;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .player img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .player:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 215, 0, 0.2);
+    }
+
+    /* ===== Schedule ===== */
+    #schedule {
+      padding: 60px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 80%;
+      color: white;
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 12px;
+    }
+
+    th {
+      background-color: gold;
+      color: black;
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== Fan Zone ===== */
+    #fan-zone {
+      padding: 60px 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button[type="submit"] {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #cfcf00;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: black;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Confetti canvas */
+    canvas#confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 40px;
+}
+
+.player {
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 15px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.player:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+.player img {
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.player:hover img {
+  transform: scale(1.1);
+}
+
+/* MODAL STYLE */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #111;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  animation: fadeIn 0.4s ease;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* ===== Pitch Section ===== */
+#pitch {
+  padding: 60px 20px;
+  background: radial-gradient(circle, #007A33 40%, #004D1A 100%);
+  color: white;
+  text-align: center;
+}
+
+#pitch h2 {
+  margin-bottom: 30px;
+  color: gold;
+  text-shadow: 2px 2px 4px black;
+}
+
+.pitch {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/006/644/439/small_2x/realistic-football-field-with-official-markings-on-the-field-vector.jpg') center/contain no-repeat;
+}
+
+/* Player marker with image + name */
+.player-pos {
+  position: absolute;
+  text-align: center;
+  width: 90px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.player-pos img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  object-fit: cover;
+  box-shadow: 0 0 10px black;
+}
+
+.player-pos p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px black;
+}
+
+.player-pos:hover {
+  transform: scale(1.15);
+}
+
+/* Pitch position coordinates (4-2-3-1) */
+.gk  { bottom: 20px; left: 44%;  }
+.rb  { bottom: 130px; left: 70%; }
+.cb1 { bottom: 150px; left: 53%; }
+.cb2 { bottom: 150px; left: 35%; }
+.lb  { bottom: 130px; left: 17%; }
+.dm1 { bottom: 260px; left: 31%; }
+.dm2 { bottom: 260px; left: 55%; }
+.rw  { bottom: 370px; left: 70%; }
+.cam { bottom: 430px; left: 44%; }
+.lw  { bottom: 370px; left: 17%; }
+.st  { bottom: 550px; left: 44%; }
+
+.coach-info, .subs {
+  margin-top: 40px;
+  background: rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: 1px solid gold;
+}
+.subs ul { list-style: none; padding: 0; }
+.subs li { margin: 5px 0; }
+ 
+/* ===== Coach + Subs Centered Layout ===== */
+.coach-info1 {
+  margin-top: 40px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid gold;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.coach-card1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.coach-card1 img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  object-fit: cover;
+  box-shadow: 0 0 10px black;
+}
+
+.coach-card1 p {
+  font-size: 15px;
+  color: white;
+  max-width: 400px;
+}
+
+/* === Simple golden glow on hover (NO size change, NO text shadow) === */
+
+.player-pos img:hover,
+.coach-card1 img:hover,
+.sub img:hover {
+  box-shadow: 0 0 15px gold, 0 0 30px rgba(255, 215, 0, 0.8);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Substitutes */
+.subs {
+  margin-top: 60px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  border: 1px solid gold;
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.subs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 25px 30px;
+  margin-top: 25px;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid gold;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px black;
+}
+
+
+.sub p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+/* Make coach and subs clickable */
+.coach-card1,
+.sub {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for clickable cards */
+.coach-card1:hover,
+.sub:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.legend-card {
+  position: relative;
+  cursor: pointer;
+}
+.legend-info {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 5px 0;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.legend-card:hover .legend-info {
+  opacity: 1;
+}
+
+ 
+  /* Fade-up animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* GRID layout */
+.trophies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  justify-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+
+
+/* Responsive: 2 per row on tablets, 1 per row on mobile */
+@media (max-width: 900px) {
+  .trophies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .trophies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  /* Records styling */
+  #records p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #records strong {
+    color: white;
+    font-weight: 700;
+  }
+
+  /* Optional: Add some background gradient for records */
+  #records .fade-up {
+    background: linear-gradient(to right, rgba(10,31,68,0.1), rgba(10,31,68,0.2));
+    
+  }
+
+
+#coaches .coach-item {
+  background-color: #111;
+  padding: 18px 24px;
+  margin: 16px auto;
+  border-radius: 18px;
+  max-width: 950px;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  transition: 0.3s;
+}
+
+#coaches .coach-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 14px rgba(255, 203, 0, 0.35);
+}
+
+#coaches .coach-text h3 {
+  color: #ffcb00;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+#coaches .coach-text p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 650px;
+}
+
+#coaches .coach-img {
+  width: 130px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ffcb00;
+}
+
+/* Candle glowing title animation */
+.section-title {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  font-weight: 900;
+
+  color: #ffcb00; /* Pure gold text */
+
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7),
+               0 0 15px rgba(255, 215, 0, 0.9); /* subtle glow */
+
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(255,215,0,0.4), 0 0 12px rgba(255,215,0,0.6); }
+  50% { text-shadow: 0 0 12px rgba(255,215,0,0.8), 0 0 25px rgba(255,215,0,1); }
+  100% { text-shadow: 0 0 5px rgba(255,215,0,0.4), 0 0 12px rgba(255,215,0,0.6); }
+}
+
+
+/* Coaches list layout */
+.coaches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Each row card */
+.coach-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  padding: 18px 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover fade + scale + glow */
+.coach-item:hover {
+  transform: scale(1.03);
+  opacity: 0.8;
+  box-shadow: 0 0 25px rgba(255, 203, 0, 0.6);
+  border-color: #ffcb00;
+}
+
+/* Coach Image */
+.coach-img {
+  width: 160px;
+  height: auto;
+  border-radius: 14px;
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom slightly on hover */
+.coach-item:hover .coach-img {
+  transform: scale(1.05);
+}
+
+/* Text styling */
+.coach-text h3 {
+  color: #ffcb00;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.coach-text p {
+  color: #ffffff;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+
+
+.player-card {
+  background: rgba(10, 10, 10, 0.7);
+  border: 2px solid #ffcb00;
+  border-radius: 15px;
+  padding: 15px;
+  width: 140px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 203, 0, 0.4);
+  cursor: pointer; /* clickable now */
+}
+
+.player-card img {
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #ffcb00;
+  margin-bottom: 10px;
+  transition: all 0.4s ease;
+}
+
+.player-card h4 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #ffcb00;
+  font-weight: 700;
+}
+
+.player-card p {
+  font-size: 12px;
+  color: white;
+  opacity: 0.9;
+}
+
+/* Hover glow */
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px gold, 0 0 40px rgba(255, 215, 0, 0.8);
+}
+
+.player-card:hover img {
+  box-shadow: 0 0 25px gold, 0 0 45px rgba(255, 215, 0, 1);
+  transform: scale(1.1);
+}
+
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.record-card {
+  background: rgba(10, 10, 10, 0.7);
+  border: 2px solid #ffcb00;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 203, 0, 0.4);
+  cursor: default; /* No pointer cursor */
+}
+
+.record-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.record-card:hover {
+   transform: scale(1.05);
+  box-shadow: 0 0 25px gold, 0 0 40px rgba(255, 215, 0, 0.8);
+}
+
+.coach-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 40px 0;
+}
+
+.coach-card {
+  background: rgba(0,0,0,0.45);
+  border-radius: 18px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  border: 1px solid #ffcb00;
+}
+
+.coach-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+
+.coach-card:hover {
+  transform: translateY(-10px);
+  opacity: 0.9;
+}
+
+.coach-card h3 {
+  color: #ffcb00;
+  margin-bottom: 8px;
+}
+
+.coach-card p {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.coach-card:hover {
+  cursor: default;
+}
+
+/* Tribute Candle Glow */
+.tribute {
+  animation: candle 2s infinite alternate;
+}
+
+@keyframes candle {
+  from { box-shadow: 0 0 10px #ffcb00; }
+  to   { box-shadow: 0 0 25px #ffcb00; }
+}
+
+
+
+.history-section {
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* smaller min width allows 4 per row */
+  gap: 25px;
+  margin-top: 30px;
+}
+/* ===== Timeline & Trophy unified card style ===== */
+.timeline-item,
+.trophy-card {
+  background: rgba(10, 10, 10, 0.7);
+  border: 2px solid #ffcb00;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 203, 0, 0.4);
+  cursor: default;
+  backdrop-filter: blur(6px);
+}
+
+.timeline-item:hover,
+.trophy-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px gold, 0 0 40px rgba(255, 215, 0, 0.8);
+}
+
+/* Images */
+.timeline-item img.decade-img,
+.trophy-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Smaller timeline title */
+.timeline-item h3 {
+  font-size: 1.25rem;   /* smaller and cleaner */
+  font-weight: 800;
+  color: #ffcb00;
+  margin-bottom: 10px;
+}
+
+/* Trophy title unchanged */
+.trophy-card h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ffcb00;
+}
+
+/* Description text */
+.timeline-item p,
+.trophy-card p {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+  .navbar ul li a.active {
+  color: gold !important;
+}
+
+.navbar ul li a.active::after {
+  width: 100%;
+}
+
+
+  #backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: gold;
+  color: black;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px gold;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s ease;
+  z-index: 9999;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+ #loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+/* Barça background stripes */
+#loadingScreen::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #A50044 0px,
+    #A50044 50px,
+    #004D98 50px,
+    #004D98 100px
+  );
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Logo animation */
+#loadingLogo {
+  width: 130px;
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 2;
+}
+
+/* Motto */
+#loadingScreen h2 {
+  color: gold;
+  font-size: 26px;
+  margin-top: 20px;
+  text-shadow: 0 0 12px gold;
+}
+
+/* Progress bar */
+#loadingBar {
+  width: 60%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+#loadingProgress {
+  width: 0%;
+  height: 100%;
+  background: gold;
+  box-shadow: 0 0 10px gold;
+  animation: loadProgress 2.5s linear forwards;
+}
+
+/* Loading... text */
+#loadingText {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.7;
+  animation: blink 1s infinite;
+}
+
+/* Footer */
+#loadingFooter {
+  color: white;
+  opacity: 0.3;
+  font-size: 14px;
+  position: absolute;
+  bottom: 40px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 25px gold); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+}
+
+@keyframes loadProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#trophies,
+#records {
+  padding: 80px 0;    /* top + bottom spacing */
+}
+
+#trophies .section-title,
+#records .section-title {
+  margin-bottom: 40px !important;  /* consistent with others */
+  text-align: center;
+}
+
+.section-divider {
+  width: 100%;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.section-divider span {
+  display: inline-block;
+  font-size: 25px;
+  color: #ffcb00;
+  letter-spacing: 3px;
+  font-weight: 800;
+  position: relative;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+}
+
+/* Stronger, brighter, longer lines */
+.section-divider span::before,
+.section-divider span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 180px; /* longer */
+  height: 3px;  /* thicker */
+  border-radius: 4px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0),
+    rgba(255, 215, 0, 0.9),
+    rgba(255, 215, 0, 0)
+  );
+
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.section-divider span::before { left: -210px; }
+.section-divider span::after  { right: -210px; }
+
+/* Footer Container */
+#footer {
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 80px;
+  background: #000000aa;
+  backdrop-filter: blur(10px);
+}
+
+/* Crest */
+#footer img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+/* Text */
+#footer p {
+  color: #fff;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+/* Social Icons Container */
+#footer .socials {
+  margin-top: 10px;
+}
+
+/* Social Icons */
+#footer .socials img {
+  width: 32px;
+  height: 32px;
+  margin: 0 10px;
+  filter: brightness(0.8);
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+#footer .socials img:hover {
+  filter: brightness(1.4);
+  transform: scale(1.15);
+}
+
+#footer .socials img {
+  width: 32px;
+  height: 32px;
+  margin: 0 10px;
+  filter: brightness(0.9);
+  transition: 0.3s ease;
+}
+
+#footer .socials img:hover {
+  filter: brightness(1.4);
+  transform: scale(1.15);
+}
+
+/* Slightly bigger Barça crest icon */
+#footer .socials .barca-icon {
+  width: 38px;
+  height: 38px;
+}
+
+
+</style>
+
+</head>
+<body>
+ <div id="loadingScreen">
+  <div id="logoGlow"></div>
+
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/640px-FC_Barcelona_%28crest%29.svg.png" id="loadingLogo">
+
+  <h2>Més que un club</h2>
+
+  <div id="loadingBar">
+    <div id="loadingProgress"></div>
+  </div>
+
+  <p id="loadingText">Loading...</p>
+
+  <p id="loadingFooter">Powered by FC Barcelona</p>
+</div>
+
+
+<main>
+  <canvas id="confetti"></canvas>
+
+ <header>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona Logo">
+  </div>
+  <div class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#players">Players</a></li>
+      <li><a href="#stadium">Stadium</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#hall-of-fame">Hall Of Fame</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+      <li><a href="#trophies">Trophies</a></li>
+      <li><a href="#records">Records</a></li>
+      <li><a href="#fan-zone">Fan Zone</a></li>
+    </ul>
+  </div>
+</header>
+
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <h2 class="section-title" >More Than a Club — Més que un club</h2>
+    <p>Welcome to the FC Barcelona fan page</p>
+    <button onclick="cheer()">Cheer for Barça 💙❤️</button>
+    <button onclick="playMusic()">🎵 Start Anthem</button>
+  </section>
+
+<!-- ===== Pitch Section ===== -->
+<section id="players">
+  <h2 style="font-size:2.5rem; margin-bottom:20px" class="section-title">⚽ Starting XI — 2025/26 Season</h2>
+  <div class="pitch">
+    <!-- Goalkeeper -->
+    <div class="player-pos gk" onclick="showPlayer('Joan Garcia')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/2b12f57a-582e-408a-b23e-ec9c42b0d5b9/01-Joan_Garcia.jpg?width=640&height=400" alt="Joan Garcia">
+      <p>Joan Garcia </p>
+    </div>
+
+    <!-- Defense -->
+    <div class="player-pos rb" onclick="showPlayer('Kounde')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/e25e8ccc-4b69-48ef-8c48-2eebbcc74770/23-Kounde.jpg?width=640&height=400" alt="Kounde">
+      <p>Koundé</p>
+    </div>
+    <div class="player-pos cb1" onclick="showPlayer('Araujo')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/46af26e5-df57-406a-9bb1-b6f037631f0f/04-Araujo.jpg?width=640&height=400" alt="Araujo">
+      <p>Araújo</p>
+    </div>
+    <div class="player-pos cb2" onclick="showPlayer('Cubarsí')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/2ca1e448-3d31-4ff2-9909-44fd00368472/02-Cubarsi.jpg?width=640&height=400" alt="Cubarsí">
+      <p>Cubarsí</p>
+    </div>
+    <div class="player-pos lb" onclick="showPlayer('Balde')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/82dfc9f5-ffc4-4b47-a828-21de924f9b5f/03-Balde.jpg?width=640&height=400" alt="Balde">
+      <p>Balde</p>
+    </div>
+
+    <!-- Midfield -->
+    <div class="player-pos dm1" onclick="showPlayer('DeJong')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/793001b1-f225-4259-8a74-27e418a3e4c9/21-De_Jong.jpg?width=640&height=400" alt="de Jong">
+      <p>de Jong</p>
+    </div>
+    <div class="player-pos dm2" onclick="showPlayer('Pedri')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/10/597a1e13-c0b2-4c93-a2fd-4cc39a9459cc/08-Pedri.jpg?width=640&height=400" alt="Pedri">
+      <p>Pedri</p>
+    </div>
+
+    <!-- Attack -->
+    <div class="player-pos rw" onclick="showPlayer('Yamal')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/a9ecee2c-116c-405c-8524-3127913e7a3c/10-Lamine.jpg?width=640&height=400" alt="Yamal">
+      <p>Yamal</p>
+    </div>
+    <div class="player-pos cam" onclick="showPlayer('Raphinha')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/10/08bbb1ff-004b-4623-a675-66fd1fbfdc8b/11-Raphinha.jpg?width=640&height=400" alt="Raphinha">
+      <p>Raphinha</p>
+    </div>
+    <div class="player-pos lw" onclick="showPlayer('Rashford')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/10/85f7a271-6b29-4459-be8b-128cb25596d0/14-Rashford.jpg?width=640&height=400" alt="Rashford">
+      <p>Rashford</p>
+    </div>
+
+    <!-- Striker -->
+    <div class="player-pos st" onclick="showPlayer('Lewandowski')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/10/6dd5aa47-d5fb-45a5-b171-0da82c9c7105/09-Lewandowski.jpg?width=640&height=400" alt="Lewandowski">
+      <p>Lewandowski</p>
+    </div>
+  </div>
+
+   <!-- ===== COACH INFO ===== -->
+<div class="coach-info1">
+  <h3>👔 Coach</h3>
+  <div class="coach-card1" onclick="showPlayer('Hansi Flick')">
+    <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/6b074293-dfb2-4f25-a0e3-3c02b351d730/00-Hansi_Flick.jpg?width=640&height=400" alt="Hansi Flick">
+    <p><strong>Hansi Flick</strong></p>
+  </div>
+</div>
+
+<!-- ===== SUBSTITUTES & RESERVES ===== -->
+<div class="subs">
+  <h3>🔁 Substitutes & Reserves</h3>
+  <div class="subs-grid">
+    <div class="sub" onclick="showPlayer('Szczesny')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/01ac5137-9725-4e97-858e-711344d43fb5/25-Szczesny.jpg?width=640&height=400" alt="Szczesny">
+      <p>Szczęsny (GK)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('TerStegen')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/1b765077-cfc5-4e66-8169-4e45f6ec7392/01-Ter_Stegen.jpg?width=640&height=400" alt="Ter Stegen">
+      <p>Ter Stegen (GK)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('EricGarcia')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/ab15b5c3-c764-40f7-983c-0fbd0ccd61bd/24-Eric_Garcia.jpg?width=640&height=400" alt="Eric Garcia">
+      <p>Eric García (CB)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('Christensen')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/11a6228b-5034-4d25-9fe3-ea3aafd04dd2/15-Christensen.jpg?width=640&height=400" alt="Christensen">
+      <p>Christensen (CB)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('GerardMartin')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/6fd05ccb-8562-4ffd-9cc8-2d36762a3634/18-Martin.jpg?width=640&height=400" alt="Gerard Martin">
+      <p>Gerard Martin (RB)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('MarcCasado')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/aee1292c-f40e-46e9-8b45-c19646ad3a04/17-Casado.jpg?width=640&height=400" alt="Marc Casado">
+      <p>Marc Casadó (CDM)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('MarcBernal')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/d19a70cc-af3f-4ea0-b0d8-5ef0d098211a/22-Bernal.jpg?width=640&height=400" alt="Marc Bernal">
+      <p>Marc Bernal (CDM)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('FerminLopez')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/4e851606-cfd6-4dc4-9042-c3dee40dbeb7/16-Fermin.jpg?width=640&height=400" alt="Fermin Lopez">
+      <p>Fermín López (CM)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('Gavi')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/21356702-1d94-49a8-a94a-4170afe7ca16/06-Gavi.jpg?width=640&height=400" alt="Gavi">
+      <p>Gavi (CM)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('DaniOlmo')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/79af1dbc-34f3-4bb7-9ee4-08269866ab47/20-Olmo.jpg?width=640&height=400" alt="Dani Olmo">
+      <p>Dani Olmo (CAM)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('RoonyBardghji')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/3ae86d91-e8c5-415e-9299-3b26ec0d2930/28-Bardghji.jpg?width=640&height=400" alt="Roony Bardghji">
+      <p>Roony Bardghji (RW)</p>
+    </div>
+    <div class="sub" onclick="showPlayer('FerranTorres')">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/09/09/c83c3cf6-9c12-41c4-b6fa-ea4cfa2bf7dc/07-Ferran_Torres.jpg?width=640&height=400" alt="Ferran Torres">
+      <p>Ferran Torres (ST)</p>
+    </div>
+  </div>
+</div>
+</section>
+
+  
+  
+
+<!-- 🌟 PLAYER MODAL -->
+<div id="playerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="playerName"></h2>
+    <img id="playerImage" src="" alt="" style="width:250px; border-radius:10px;">
+    <p id="playerBio"></p>
+  </div>
+</div>
+
+<div class="section-divider"><span>✦</span></div>
+
+  <!-- ===== Camp Nou Stadium Section ===== -->
+<section id="stadium" style="padding:80px 20px; text-align:center; background:rgba(255,255,255,0.08); margin-top:60px; border-radius:20px;">
+  <h2 style="font-size:2.5rem; margin-bottom:20px; color:#ffcb00;" class="section-title">🏟️ Spotify Camp Nou Stadium</h2>
+
+  <p style="max-width:850px; margin:auto; font-size:1.15rem; line-height:1.8;">
+    The legendary <strong>Camp Nou</strong> has been the heart of FC Barcelona since it opened in <strong>1957</strong>.
+    Over six decades of passion, triumphs, and unforgettable moments have made it one of football’s true temples.
+    From <strong>Johan Cruyff</strong> to <strong>Lionel Messi</strong>, history has been written on this sacred grass.
+  </p>
+
+  <!-- ===== Stadium Stats ===== -->
+  <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin:40px 0;">
+    <div class="stat" style="text-align:center;">
+      <h3 style="font-size:2.2rem; color:#ffcb00;" id="yearOpened">1957</h3>
+      <p style="font-size:1rem;">Year Opened</p>
+    </div>
+    <div class="stat" style="text-align:center;">
+      <h3 style="font-size:2.2rem; color:#ffcb00;" id="capacity">99,354</h3>
+      <p style="font-size:1rem;">Seating Capacity</p>
+    </div>
+    <div class="stat" style="text-align:center;">
+      <h3 style="font-size:2.2rem; color:#ffcb00;" id="rebuild">2026</h3>
+      <p style="font-size:1rem;">Reopening After Renovation</p>
+    </div>
+    <div class="stat" style="text-align:center;">
+      <h3 style="font-size:2.2rem; color:#ffcb00;" id="expectedcapacity">105,000</h3>
+      <p style="font-size:1rem;">Expected Seating Capacity After Renovation</p>
+    </div>
+  </div>
+
+  <!-- ===== Image Gallery Slider ===== -->
+  <div class="stadium-gallery" style="position:relative; max-width:850px; margin:auto;">
+    <img id="stadiumImage" src="https://www.fcbarcelona.com/photo-resources/2021/12/10/cdb9d8b7-0b54-4bcb-a8e1-44e0ad7a9fdd/mini_7-CAMP-NOU.jpg?width=1200&height=750" alt="Camp Nou View" style="width:100%; border-radius:20px; box-shadow:0 0 15px rgba(0,0,0,0.4); transition:opacity 1s ease-in-out;">
+    <button onclick="prevImage()" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:none; color:white; font-size:1.5rem; padding:8px 12px; border-radius:50%; cursor:pointer;">&#10094;</button>
+    <button onclick="nextImage()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:none; color:white; font-size:1.5rem; padding:8px 12px; border-radius:50%; cursor:pointer;">&#10095;</button>
+  </div>
+  <p style="margin-top:10px; font-size:0.95rem; color:#eee;">🏟️ Swipe through old and new Camp Nou views</p>
+
+  <!-- ===== Modern Camp Nou Description ===== -->
+  <p style="max-width:850px; margin:40px auto; font-size:1.15rem; line-height:1.8;">
+    The <strong>Spotify Camp Nou</strong> is now undergoing a stunning transformation.
+    The renovation features a <strong>solar-paneled retractable roof</strong>, new premium seating,
+    and immersive digital experiences for fans. This 2026 reopening marks the next chapter of
+    Barça’s proud legacy — blending history, technology, and sustainability.
+  </p>
+
+  <div class="section-divider"><span>✦</span></div>
+
+  <!-- ===== HISTORY SECTION ===== -->
+<section id="history" class="history-section">
+  <h2 class="section-title">📜 FC Barcelona History</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/11/27/2f348353-06a4-4602-adca-23d4d778c938/mini_MESSI-E-INIESTA-COPA-01.jpg?width=600&height=337" alt="2008-20 Barcelona">
+      <h3>2008–2020 — The best years in our history</h3>
+      <p>Barça captivated the world with their iconic football style, winning three Champions League titles in a golden era of dominance.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/c6c9bfc9-1920-4c7e-b54c-df769e526994/16070253.jpg?width=600&height=337" alt="1996-2008 Barça">
+      <h3>1996–2008 — Barça reaches its century</h3>
+      <p>The centenary celebrations showcased the deep emotional connection fans have for the club.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/dfcb9d60-c582-4903-8219-9d29ebddfc8f/16183525.jpg?width=600&height=337" alt="Dream Team Cruyff">
+      <h3>1988–1996 — The era of the Dream Team</h3>
+      <p>Johan Cruyff’s Dream Team conquered Europe, earning the first European Cup in 1992.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/f635ac30-cadc-40b3-90a9-f87d81929e0b/16070582.jpg?width=600&height=337" alt="1978-88 Barça">
+      <h3>1978–1988 — More members, more stars</h3>
+      <p>Relentless effort and star signings raised the club to global status.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/45a9607a-ee80-4530-96ce-52aa167723d5/16183511.jpg?width=600&height=337" alt="Cruyff 1974">
+      <h3>1969–1978 — Cruyff and democracy</h3>
+      <p>Barça signed Johan Cruyff in 1974, becoming a symbol of freedom and identity.</p>
+    </div>
+
+   <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/5237164d-3995-4a56-9153-af39411b4c15/16183518.jpg?width=600&height=337" alt="Camp Nou 1957">
+      <h3>1961-1969 — A new social dimension — The Kubala Era</h3>
+      <p>The Club increases its membership despite the relative lack of success in the 1960s</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/e798361c-0c21-4ae5-a4c3-cee31c0581ef/16183532.jpg?width=600&height=337" alt="Camp Nou 1957">
+      <h3>1950–1961 — The Kubala Era</h3>
+      <p>With Ladislao Kubala leading the way, Barça constructed the iconic Camp Nou in 1957.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/990dda05-cb26-4020-8575-4e8b6067d67f/16070638.jpg?width=600&height=337" alt="Early years">
+      <h3>1939–1950 — Years of perseverance</h3>
+      <p>Harsh post-war repression nearly destroyed the club, but Barcelona survived.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/4bdcc1d8-05da-4911-98b8-b3579cbdd210/16070414.jpg?width=600&height=337" alt="1930s Barça">
+      <h3>1930–1939 — Struggling against history</h3>
+      <p>Political instability and conflict heavily impacted the team and supporters.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/05/08/d490d7dd-c46b-4aaa-802d-ba0bd1c1e2e0/16070133.jpg?width=600&height=337" alt="Golden Age Barça">
+      <h3>1919–1930 — A golden age</h3>
+      <p>The club wins trophies consistently and begins to earn global recognition.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/05/08/1f2da0bd-c55c-4201-a678-4f14f683b95f/16183504.jpg?width=600&height=337" alt="Carrer Industria">
+      <h3>1909–1919 — Consolidation at Carrer Indústria</h3>
+      <p>Barça builds its first owned stadium with an actual seating stand.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img class="decade-img" src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/03/13/19990d6f-6a8a-449d-b811-a8f1fc818f62/16070442.jpg?width=600&height=337" alt="Foundation Barça">
+      <h3>1899–1909 — Foundation and survival</h3>
+      <p>Joan Gamper founds the club and nurtures its identity throughout the first 25 years.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"><span>✦</span></div>
+
+
+<!-- ===== Hall of Fame Podium Section ===== -->
+<section id="hall-of-fame" class="fade-in" style="padding:60px 20px; background: radial-gradient(circle, blue black); color: white; text-align:center;">
+  <h2 style="font-size:2.5rem; margin-bottom:20px; color:#ffcb00;" class="section-title">🏆 Hall of Fame</h2>
+  <p style="margin-bottom:100px;">Celebrating the greatest legends of FC Barcelona</p>
+
+  <!-- Podium for Messi with Flickering Glow -->
+<div class="podium-container" style="display:flex; justify-content:center; align-items:flex-end; gap:40px; margin-bottom:50px; position:relative;">
+
+  <!-- Glow behind Messi -->
+  <div style="
+    position:absolute; 
+    top:0; 
+    left:50%; 
+    transform:translateX(-50%); 
+    width:300px; 
+    height:400px; 
+    border-radius:50%; 
+    background: radial-gradient(circle, rgba(255,215,0,0.5) 0%, rgba(255,215,0,0) 70%);
+    filter: blur(50px);
+    animation: flicker 1.5s infinite alternate;
+    z-index:0;
+  "></div>
+
+  <!-- Messi Podium -->
+  <div class="podium-step hall-of-fame-player" onclick="showPlayer('Lionel Messi')" 
+       style="
+        max-width:200px; 
+        background: linear-gradient(145deg, #ffd700, #ffcc00); 
+        padding-top:150px; 
+        border-radius:15px; 
+        position:relative; 
+        transform: translateY(50px); 
+        opacity:0; 
+        transition: all 1s ease, transform 0.5s ease, box-shadow 0.5s ease;
+        cursor:pointer;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 20px gold;
+        z-index:1;
+      "
+      onmouseover="this.style.boxShadow='0 15px 30px rgba(0,0,0,0.6), 0 0 40px gold'; this.style.transform='translateY(45px) scale(1.05)';"
+      onmouseout="this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5), 0 0 20px gold'; this.style.transform='translateY(50px) scale(1)';"
+  >
+    
+    <!-- Messi Image -->
+    <img src="https://www.si.com/.image/c_fill,w_1080,ar_16:9,f_auto,q_auto,g_auto/MTY4MTAyNTc0Nzg3NDA1MDcz/messi-jersey-real-madridjpg.jpg" 
+         alt="Messi" 
+         style="
+          width:120px; 
+          border-radius:50%; 
+          border:4px solid white; 
+          position:absolute; 
+          top:-80px; 
+          left:50%; 
+          transform:translateX(-50%); 
+          box-shadow: 0 0 25px white, 0 0 50px gold;
+          transition: all 0.5s ease;
+         "
+    >
+    
+    <!-- Name & Title -->
+    <h3 style="margin-top:10px; color:#fff; text-shadow: 0 0 10px gold, 0 0 20px orange;">Lionel Messi</h3>
+    <p style="font-weight:bold; margin-bottom:10px; color:#fff; text-shadow: 0 0 5px gold;">THE GOAT</p>
+    
+    <!-- Podium Base -->
+    <div style="
+      position:absolute; 
+      bottom:0; 
+      width:100%; 
+      height:80px; 
+      background: #b8860b; 
+      border-top:3px solid white; 
+      border-radius:0 0 15px 15px; 
+      line-height:80px; 
+      font-weight:bold; 
+      color:white; 
+      text-shadow: 0 0 5px gold;
+      text-align:center;
+      box-shadow: inset 0 5px 10px rgba(255,255,255,0.2), 0 0 15px gold;
+    ">
+      <strong>🐐 GOAT</strong>
+    </div>
+  </div>
+</div>
+
+
+
+   <!-- Other Legends Grid -->
+  <!-- Legends Grid -->
+<div class="legends-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+  <!-- Xavi -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Xavi')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2019/03/12/62f67c7f-28fa-49d4-aa5f-9a0502c46c41/znYiAFfh.jpg" alt="Xavi">
+      <h4>Xavi</h4>
+      <p>Midfield Maestro</p>
+    </div>
+  </div>
+
+  <!-- Iniesta -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Iniesta')">
+    <div class="player-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4dc41VmOtGB9n18ThIi-21zhEQ_bOjkFnMKaOyh-DBMyeSm242sxvf-446WmK32stAF8&usqp=CAU" alt="Iniesta">
+      <h4>Iniesta</h4>
+      <p>Midfield Genius</p>
+    </div>
+  </div>
+
+  <!-- Ronaldinho -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Ronaldinho')">
+    <div class="player-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbQup3x4jjbIoEwqbjAnH-bmi-JYIsl3EjccQoiVxcXmVQ0qYtZe1P-RYNw4uNVkvGQLWESpDd76AmoucBgNeaCICu9RVv9W_2iIX-tkA&s=10" alt="Ronaldinho">
+      <h4>Ronaldinho</h4>
+      <p>Magic Forward</p>
+    </div>
+  </div>
+
+  <!-- Piqué -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Piqué')">
+    <div class="player-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwefMEGlPkudOyyO4hCnKJChyfREOTa7M7HQ&s" alt="Piqué">
+      <h4>Piqué</h4>
+      <p>Defensive Rock</p>
+    </div>
+  </div>
+
+  <!-- Cruyff -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Cruyff')">
+    <div class="player-card">
+      <img src="https://thanhnien.mediacdn.vn/Uploaded/game/st.game.thanhnien.vn/image/01TNG/03/cruyffbrac-2116795.jpg" alt="Cruyff">
+      <h4>Cruyff</h4>
+      <p>Total Football Legend</p>
+    </div>
+  </div>
+
+  <!-- Rivaldo -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Rivaldo')">
+    <div class="player-card">
+      <img src="https://photo.znews.vn/w660/Uploaded/SgtnRN/2014_03_16/rivaldo1.jpg" alt="Rivaldo">
+      <h4>Rivaldo</h4>
+      <p>Forward Star</p>
+    </div>
+  </div>
+
+  <!-- Koeman -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Koeman')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2019/03/26/02d40d1b-2963-44ed-85c4-3ff229743dd9/UsvYNIFZ.jpg?width=1200&height=750" alt="Koeman">
+      <h4>Koeman</h4>
+      <p>Defender & Set-Piece</p>
+    </div>
+  </div>
+
+  <!-- Deco -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Deco')">
+    <div class="player-card">
+      <img src="https://madhyamamonline.com/h-upload/2023/08/17/2047789-deco-barcelona-1591366862-40626.jpg" alt="Deco">
+      <h4>Deco</h4>
+      <p>Creative Midfield</p>
+    </div>
+  </div>
+
+  <!-- Puyol -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Puyol')">
+    <div class="player-card">
+      <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS45CR52D2XrX38akBl3Echp9nIR87XcjNZxY7aHxwUNgpDf9gatb6pNQ2jhJuQuQCReXGxRblulSj_sTw" alt="Puyol">
+      <h4>Puyol</h4>
+      <p>Captain & Leader</p>
+    </div>
+  </div>
+
+  <!-- Eto'o -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Etoo')">
+    <div class="player-card">
+      <img src="https://e0.365dm.com/19/09/1600x900/skysports-samuel-etoo-barcelona_4767534.jpg?20190907160622" alt="Etoo">
+      <h4>Eto'o</h4>
+      <p>Striker Legend</p>
+    </div>
+  </div>
+
+  <!-- Henry -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Henry')">
+    <div class="player-card">
+      <img src="https://i.guim.co.uk/img/static/sys-images/Football/Clubs/Club%20Home/2009/3/11/1236808120478/Thierry-Henry--001.jpg?width=465&dpr=1&s=none&crop=none" alt="Henry">
+      <h4>Henry</h4>
+      <p>Dynamic Forward</p>
+    </div>
+  </div>
+
+  <!-- Bojan -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Bojan')">
+    <div class="player-card">
+      <img src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/fb09/live/b8de2810-f53a-11ef-a372-9f83dba237c1.jpg" alt="Bojan">
+      <h4>Bojan</h4>
+      <p>Goal Poacher</p>
+    </div>
+  </div>
+
+  <!-- Thiago -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Thiago')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2024/07/08/f97d2908-b082-4144-8dc6-d03e3bdbab4d/FCB-AlavesAlex_pic_2012-11-28fcb-deportivoalaves042.jpg" alt="Thiago">
+      <h4>Thiago</h4>
+      <p>Vision Midfield</p>
+    </div>
+  </div>
+
+  <!-- Busquets -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Busquets')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2023/01/12/345e6af7-57b0-4c25-a450-5b3180cb6110/_SGB0816.jpg" alt="Busquets">
+      <h4>Busquets</h4>
+      <p>Defensive Mid</p>
+    </div>
+  </div>
+
+  <!-- Neymar -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Neymar')">
+    <div class="player-card">
+      <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2025/3/1/1470644/Neymar-Barca.jpg" alt="Neymar">
+      <h4>Neymar</h4>
+      <p>Brazilian Forward</p>
+    </div>
+  </div>
+
+  <!-- Suarez -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Suarez')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/09/06/c7355114-245c-48a3-b5fe-0cea11dc9379/SUAREZ-56-min.jpg" alt="Suarez">
+      <h4>Suárez</h4>
+      <p>Clinical Striker</p>
+    </div>
+  </div>
+
+  <!-- Rakitic -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Rakitic')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2019/05/30/3eb2e04e-05ab-4df4-a719-8a9be00a0ff9/cuOKvfLd.jpg?width=1200&height=750" alt="Rakitic">
+      <h4>Rakitic</h4>
+      <p>Creative Midfield</p>
+    </div>
+  </div>
+
+  <!-- Pep -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Pep')">
+    <div class="player-card">
+      <img src="https://www.mancity.com/features/cruyff-way/assets/8jzjYKho0V/pep-playing-1200x750.webp" alt="Pep">
+      <h4>Pep</h4>
+      <p>Midfield Maestro</p>
+    </div>
+  </div>
+
+  <!-- Valdés -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Valdes')">
+    <div class="player-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/19/cc232208-5255-46ea-a6bd-86ceb1eb3580/4696525.jpg" alt="Valdes">
+      <h4>Valdés</h4>
+      <p>Goalkeeper Icon</p>
+    </div>
+  </div>
+
+  <!-- Dani Alves -->
+  <div class="hall-of-fame-player" onclick="showPlayer('DaniAlves')">
+    <div class="player-card">
+      <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_3000,h_1687,x_0,y_353/c_fill,w_1080,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F90min_en_international_web%2F01g4fc8hyp98rmfgm23x.jpg" alt="Dani Alves">
+      <h4>Dani Alves</h4>
+      <p>Right-Back Legend</p>
+    </div>
+  </div>
+
+  <!-- Sergi Roberto -->
+  <div class="hall-of-fame-player" onclick="showPlayer('SergiRoberto')">
+    <div class="player-card">
+      <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeCbl_uudy_J_2vXEtmu88t67E7gHuOoj2N2JrU_PA5EkedgVfMQ_1m8BbdVqGyCdFdMIv_4heP6YbanYODOUEi83SVICQpCJDpTltdNmVrNQKp5JSQ1RPnIlE3NYPLnUti7vSATLJZO7LqrAfP4exQ5ao?key=3uKPEPSJ0U3pOiOwLFzwKg" alt="Sergi Roberto">
+      <h4>Sergi Roberto</h4>
+      <p>Versatile Midfielder</p>
+    </div>
+  </div>
+
+  <!-- Jordi Alba -->
+  <div class="hall-of-fame-player" onclick="showPlayer('JordiAlba')">
+    <div class="player-card">
+      <img src="https://monesport.cat/app/uploads/sites/12/2025/10/europapress_5234977_jordi_alba_fc_barcelona_during_the_spanish_championship_liga_football_match1.jpg" alt="Jordi Alba">
+      <h4>Jordi Alba</h4>
+      <p>Left-Back Speedster</p>
+    </div>
+  </div>
+
+  <!-- Pedro -->
+  <div class="hall-of-fame-player" onclick="showPlayer('Pedro')">
+    <div class="player-card">
+      <img src="https://imgresizer.tntsports.io/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.tntsports.io/2015/08/11/1658678-35171486-2560-1440.jpg" alt="Pedro">
+      <h4>Pedro</h4>
+      <p>Two-Footed Winger</p>
+    </div>
+  </div>
+
+  <!-- David Villa -->
+  <div class="hall-of-fame-player" onclick="showPlayer('DavidVilla')">
+    <div class="player-card">
+      <img src="https://e0.365dm.com/11/05/2048x1152/David-Villa-Barcelona-Champions-League-final-_2602907.jpg?20110528213652" alt="David Villa">
+      <h4>David Villa</h4>
+      <p>Striker Legend</p>
+    </div>
+  </div>
+
+</div>
+</section>
+<div class="section-divider"><span>✦</span></div>
+
+<!-- ===== COACHES SECTION ===== -->
+<section id="coaches" style="margin-top:80px;">
+  <h2 class="section-title candle-glow">👔 FC Barcelona Coaches </h2>
+
+  <div class="coach-card-container">
+
+   
+    <div class="coach-card">
+      <img src="https://barcauniversal.com/wp-content/uploads/2022/11/fc-barcelona-v-fc-bayern-munchen-group-c-uefa-champions-league-22-1536x1024.jpg" alt="Xavi">
+      <h3>Xavi Hernández (2021–2024)</h3>
+      <p>Returned home to restore Barça’s identity and won La Liga 2022–23.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://www.si.com/.image/t_share/MTc0NzUwMDY2MTI3NTQ2MTI3/ronald-koeman-barcelona.jpg" alt="Ronald Koeman">
+      <h3>Ronald Koeman (2020–2021)</h3>
+      <p>Scored the winning goal in the 1992 European Cup; guided Barça in transition.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://cdn-images.vtv.vn/2020/8/15/quique-setien-1597501427896883175051.jpg" alt="Quique Setien">
+      <h3>Quique Setién (2020)</h3>
+      <p>Known for his Cruyff-style possession football philosophy.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://icdn.football-espana.net/wp-content/uploads/2022/06/Ernesto-Valverde.jpg" alt="Ernesto Valverde">
+      <h3>Ernesto Valverde (2017–2020)</h3>
+      <p>Won 4 trophies including two La Liga titles; respected for his stability.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/07/04/8c85f12e-a8ed-44b9-b028-50ea784c0f27/geYQQrlY.jpg" alt="Luis Enrique">
+      <h3>Luis Enrique (2014–2017)</h3>
+      <p>Manager of the unforgettable 2015 treble – one of Barça’s greatest eras.</p>
+    </div>
+
+    <div class="coach-card tribute">
+      <img src="https://media.cnn.com/api/v1/images/stellar/prod/130722141846-football-gerardo-martino.jpg?q=w_1644,h_1248,x_0,y_0,c_fill" alt="Tata Martino">
+      <h3>🕯 Gerardo 'Tata' Martino (2013–2014)</h3>
+      <p>Class and dignity, respected worldwide. Passed away July 25, 2024.</p>
+    </div>
+
+    <div class="coach-card tribute">
+      <img src="https://e3.365dm.com/16/07/2048x1152/vilanova-1_3593788.jpg" alt="Tito Vilanova">
+      <h3>🕯 Tito Vilanova (2012–2013)</h3>
+      <p>Record La Liga points and beloved by all Culés. Passed away April 25, 2014.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/20/eafd02f0-be5e-427c-a083-2a05ba67ef3e/2996851.jpg" alt="Pep Guardiola">
+      <h3>Pep Guardiola (2008–2012)</h3>
+      <p>Won 14/19 trophies including the historic 2009 sextuple. Greatest era ever.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://e0.365dm.com/08/02/2048x1152/FrankRijkaard_679073.jpg?20080228084645" alt="Frank Rijkaard">
+      <h3>Frank Rijkaard (2003–2008)</h3>
+      <p>Rebuilt the team and brought European glory in 2006.</p>
+    </div>
+
+    <div class="coach-card tribute">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/20/ee7a3c61-3043-43a8-af8e-7254ed4d1a65/3353231.jpg" alt="Radomir Antic">
+      <h3>🕯 Radomir Antic (2003)</h3>
+      <p>Restored stability and inspired respect. Passed away April 6, 2020.</p>
+    </div>
+
+    <div class="coach-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/10/30/bf66126b-83f8-459b-8e9e-1319ed872a84/DE-LA-CRUZ.jpg" alt="Jesus de la Cruz">
+      <h3>Jesús Antonio de la Cruz (2003)</h3>
+      <p>Interim manager for one match before Antic arrived.</p>
+    </div>
+    
+   <div class="coach-card">
+  <img src="https://uh.gsstatic.es/sfAttachPlugin/getCachedContent/id/2787411/width/425/height/284/crop/1" alt="Llorenç Serra Ferrer">
+  <h3>Llorenç Serra Ferrer (2000–2001)</h3>
+  <p>Born in Mallorca in 1953. Took charge in summer 2000 following Van Gaal’s departure.</p>
+</div>
+
+<div class="coach-card">
+  <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/20/d116f1e6-5f98-4443-9a53-1fcc22510f38/16947963.jpg" alt="Louis van Gaal">
+  <h3>Louis van Gaal (1997–2000 / 2002–2003)</h3>
+  <p>Born in Amsterdam in 1951. Returned for a second spell in 2002 after a successful first era.</p>
+</div>
+
+<div class="coach-card tribute">
+  <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/20/c1b676f0-0285-4046-a7ff-a8a7720b9b10/16947935.jpg" alt="Bobby Robson">
+  <h3>🕯 Bobby Robson (1996–1997)</h3>
+  <p>Replaced Cruyff and won Copa del Rey & European Cup Winners’ Cup. Passed away in Jul 31, 2009.</p>
+</div>
+
+<div class="coach-card tribute">
+  <img src="https://i.eurosport.com/2016/03/25/1822987-38456971-2560-1440.jpg" alt="Johan Cruyff">
+  <h3>🕯 Johan Cruyff (1988–1996)</h3>
+  <p>Father of the Dream Team and architect of Barça DNA. Legendary era. Passed away Mar 24, 2016</p>
+</div>
+
+  </div>
+</section>
+
+<div class="section-divider"><span>✦</span></div>
+
+
+<section id="trophies">
+  <h2 style="font-size:2.5rem; margin-bottom:20px; color:#ffcb00;" class="section-title">🏆 Barcelona Trophy Cabinet</h2>
+
+  <!-- ===== Domestic Trophies ===== -->
+  <h3 style="font-size:1.5rem; margin-bottom:20px; color:white;" class="section-title">🏆 Domestic Trophies</h3>
+  <div class="trophies-grid">
+    <div class="trophy-card">
+      <img src="https://images.augustman.com/wp-content/uploads/sites/3/2025/05/20132113/ipiccy_image-2025-05-20T101838.991.jpg" alt="La Liga">
+      <h3 id="laliga">0</h3>
+      <p>La Liga Titles</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2025/04/26/e8c97963-2d6a-4026-bf4a-805dca713a2c/_GP20794.jpg?width=1200&height=525" alt="Copa del Rey">
+      <h3 id="copaDelRey">0</h3>
+      <p>Copa del Rey (World Record)</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2025/01/13/thumbs/1200x675/363700.jpg?v=1736757016" alt="Supercopa">
+      <h3 id="supercopa">0</h3>
+      <p>Supercopa de España</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://icdn.semprebarca.com/wp-content/uploads/2024/12/A-detailed-view-of-the-Copa-Del-Rey-trophy.jpg" alt="Copa de la Liga">
+      <h3 id="copadelaliga">0</h3>
+      <p>Copa de la Liga</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://objetos-xlk.estaticos-marca.com/files/article_main_microformat_4_3/uploads/2024/09/13/16975400576863.jpeg" alt="Copa Eva Duarte">
+      <h3 id="evaDuarte">0</h3>
+      <p>Copa Eva Duarte</p>
+    </div>
+  </div>
+
+  <!-- ===== International Trophies ===== -->
+  <h3 style="font-size:1.5rem; margin-bottom:20px; color:white;" class="section-title">🏆 International Trophies</h3>
+  <div class="trophies-grid">
+    <div class="trophy-card">
+      <img src="https://e0.365dm.com/15/06/2048x1152/barcelona-trophy-celebration_3312623.jpg?20150827165401" alt="UEFA Champions League">
+      <h3 id="ucl">0</h3>
+      <p>UEFA Champions League</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://editorial.uefa.com/resources/0250-0c50f52cc777-bd3151065de6-1000/barcelona_s_players_celebrate_with_the_trophy_on_the_stade_louis_ii_pitch.jpeg" alt="UEFA Super Cup">
+      <h3 id="supercup">0</h3>
+      <p>UEFA Super Cup</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://images.mlssoccer.com/image/private/t_editorial_landscape_12_desktop/f_auto/mls-van-prd/vofjdy2oybigayntvsfv.jpg" alt="FIFA Club World Cup">
+      <h3 id="clubWorldcup">0</h3>
+      <p>FIFA Club World Cup</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2019/03/28/83420454-29f0-4e90-90d4-6df89b8bd5d4/jldCRPSb.jpg" alt="UEFA Cup Winners' Cup">
+      <h3 id="cupWinners">0</h3>
+      <p>UEFA Cup Winners' Cup (Record)</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/08/24/415953be-d312-4bca-a4f4-328004957728/SHOJEJoj.jpg" alt="Inter-Cities Fairs Cup">
+      <h3 id="fairsCup">0</h3>
+      <p>Inter-Cities Fairs Cup (Record)</p>
+    </div>
+
+    <div class="trophy-card">
+      <img src="https://imageio.forbes.com/specials-images/imageserve/94925724/0x0.jpg?format=jpg&crop=3342,1879,x0,y0,safe&height=900&width=1600&fit=bounds" alt="Latin Cup">
+      <h3 id="latinCup">0</h3>
+      <p>Latin Cup</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><span>✦</span></div>
+
+
+<!-- Records Section -->
+<section id="records">
+  <h3 class="section-title" style="font-size:2.5rem; margin-bottom:20px; color:#ffcb00; text-align:center;">
+   🏆 Club Records
+  </h3>
+
+  <div class="records-grid">
+
+    <!-- Card 1 -->
+    <div class="record-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2024/05/29/0ed18274-9725-4c4a-8f3a-3e5c81f1b1ee/sextet.jpg" alt="Sextuple Trophy">
+      <p><strong>First club to win the sextuple (2009):</strong> Won all six major trophies.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="record-card">
+      <img src="https://platform.barcablaugranes.com/wp-content/uploads/sites/21/chorus/uploads/chorus_asset/file/14824111/453785820.0.1409390962.jpg?quality=90&strip=all&crop=0.087499999999999%2C0%2C99.825%2C100&w=2400" alt="Treble Trophy">
+      <p><strong>First European team to win the treble twice:</strong> 2009 & 2015.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="record-card">
+      <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2022/10/18/9e5af8a3-3117-41cb-a069-8586b1334bab/3200x2000_Balon-d-Or.jpg" alt="Ballon d'Or Trophy">
+      <p><strong>Most Ballon d'Or winners:</strong> 16 total.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="record-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2020/05/09/c618336c-7f39-4c4f-a30d-b8fab91a8148/mini_3200x2000_Dada_dia_11_05.jpg?width=624&height=368" alt="Unbeaten Run">
+      <p><strong>Longest unbeaten run in La Liga:</strong> 43 games.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="record-card">
+      <img src="https://cdn.tienphong.vn/images/75bdc0c2dc2492e3010f3533e66d7b57f490a82eaf046b80cce658951cdc10313475f0e20f2301ba0e4b3c9958bbd280e1ea4bd39c695733b513a3985dfeb63f/81zxzdp9zyl.jpg" alt="Cup Winners Cup">
+      <p><strong>Record Cup Winners' Cups:</strong> 4.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="record-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2022/02/09/974fbf78-9f38-40b9-9ce5-cad5f4a2fd80/25-9-1966-OFRENA-TROFEU-COPA-DE-FIRES-ok.jpg?width=1200&height=750" alt="Fairs Cup">
+      <p><strong>Record Fairs Cups:</strong> 3.</p>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="record-card">
+      <img src="https://i0.wp.com/worldfootballindex.com/wp-content/uploads/2020/07/Messi-Barcelona-2009-tactics.jpg?fit=1000%2C691&ssl=1" alt="El Clasico">
+      <p><strong>Biggest away El Clásico win:</strong> 6–2 (2009).</p>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="record-card">
+      <img src="https://www.fcbarcelona.com/photo-resources/2023/04/25/083e115a-4e71-4f7c-86f7-baaef12f3ab0/mini_15000000-YT-8_5-clean.jpg?width=1200&height=750" alt="YouTube Record">
+      <p><strong>Most successful sports team on YouTube:</strong> 23.8M.</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- ===== Fan Zone ===== -->
+  <section id="fan-zone">
+    <h2>💬 Fan Zone</h2>
+    <p>Send your support message to FC Barcelona!</p>
+    <form onsubmit="return sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <textarea placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="thankyou" style="display:none; margin-top:15px;">💙❤️ Thank you for supporting Barça!</p>
+  </section>
+</main>
+
+<div id="backToTop">⬆️</div>
+
+<footer id="footer">
+
+  <!-- Barça Crest -->
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png" alt="Barça Crest">
+
+  <p>© 2025 FC Barcelona Fan Website</p>
+
+  <!-- Social Icons -->
+  <div class="socials">
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/FCBarcelona" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/174/174883.png" alt="YouTube">
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/fcbarcelona/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+  </a>
+
+  <!-- Twitter/X -->
+  <a href="https://twitter.com/FCBarcelona" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="Twitter/X">
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/fcbarcelona/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@fcbarcelona" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png" alt="TikTok">
+  </a>
+
+  <!-- Official Barça Website -->
+  <a href="https://www.fcbarcelona.com" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/738/738657.png" 
+         alt="Official Barça Website"
+         class="barca-icon">
+  </a>
+
+</div>
+
+
+
+  
+  <!-- ===== JavaScript ===== -->
+<script>
+let audio = null;
+let currentTrack = ""; 
+let confettiActive = false;
+let confettiAnimationId = null;
+let confettiPieces = [];
+
+const confettiCanvas = document.getElementById("confetti");
+const ctx = confettiCanvas.getContext("2d");
+
+/* ===== Music Controls ===== */
+function playMusic() {
+  const anthemURL = 'https://s3.amazonaws.com/fcbarcelona-static-files/ringtones/Official-Anthem.wav';
+
+  if (audio && currentTrack === "anthem" && !audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+    currentTrack = "";
+    return;
+  }
+
+  if (!audio || currentTrack !== "anthem") {
+    if (audio) audio.pause();
+    audio = new Audio(anthemURL);
+    audio.loop = true;
+    audio.play();
+    currentTrack = "anthem";
+  }
+}
+
+function cheer() {
+  const cheerURL = 'https://s3.amazonaws.com/fcbarcelona-static-files/ringtones/Barca-Barca-Barca.mp3';
+
+  // Toggle confetti
+  if (confettiActive) {
+    fadeOutConfetti();
+  } else {
+    launchConfetti();
+  }
+
+  if (audio && currentTrack === "cheer" && !audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+    currentTrack = "";
+    return;
+  }
+
+  if (!audio || currentTrack !== "cheer") {
+    if (audio) audio.pause();
+    audio = new Audio(cheerURL);
+    audio.loop = true;
+    audio.play();
+    currentTrack = "cheer";
+  }
+}
+
+/* ===== Confetti Animation ===== */
+function resizeCanvas() {
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function launchConfetti() {
+  confettiActive = true;
+
+  confettiPieces = Array.from({ length: 250 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight - window.innerHeight,
+    r: Math.random() * 5 + 2,
+    d: Math.random() * 5 + 2,
+    color: ["#004D98", "#A50044", "#EDBB00"][Math.floor(Math.random() * 3)],
+    tilt: Math.random() * 10 - 5,
+    tiltAngleIncrement: Math.random() * 0.07 + 0.02,
+    tiltAngle: 0,
+    opacity: 1,   // start fully visible
+    fadeSpeed: Math.random() * 0.01 + 0.003 // different fade for each piece
+  }));
+
+  animateConfetti();
+}
+
+function animateConfetti() {
+  ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+  confettiPieces.forEach(p => {
+    p.tiltAngle += p.tiltAngleIncrement;
+    p.y += p.d * 0.5;
+    p.x += Math.sin(p.tiltAngle) * 1.5;
+
+    // Wrap confetti to top if it falls below
+    if (p.y > confettiCanvas.height + 5) {
+      p.y = -10;
+      p.x = Math.random() * window.innerWidth;
+    }
+
+    drawConfetti(p);
+  });
+
+  // Remove fully transparent confetti
+  confettiPieces = confettiPieces.filter(p => p.opacity > 0);
+
+  if (confettiActive || confettiPieces.length > 0) {
+    confettiAnimationId = requestAnimationFrame(animateConfetti);
+  }
+}
+
+function drawConfetti(p) {
+  ctx.beginPath();
+  ctx.lineWidth = p.r;
+  ctx.strokeStyle = hexToRGBA(p.color, p.opacity);
+  ctx.moveTo(p.x + p.tilt + p.r, p.y);
+  ctx.lineTo(p.x, p.y + p.tilt + p.r);
+  ctx.stroke();
+}
+
+function hexToRGBA(hex, alpha) {
+  const bigint = parseInt(hex.replace("#",""),16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function fadeOutConfetti() {
+  confettiActive = false;
+  // Gradually reduce opacity
+  const fadeInterval = setInterval(() => {
+    confettiPieces.forEach(p => {
+      p.opacity -= p.fadeSpeed;
+      if (p.opacity < 0) p.opacity = 0;
+    });
+    if (confettiPieces.length === 0 || confettiPieces.every(p => p.opacity <= 0)) {
+      clearInterval(fadeInterval);
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    }
+  }, 16); // roughly 60fps
+}
+</script>
+  </script>
+<script>
+const players = {
+  'Lewandowski': {
+    name: 'Robert Lewandowski',
+    img: 'https://www.fcbarcelona.com/photo-resources/2024/10/26/a6c2ecf9-c552-4c4a-b8d2-0474659d0afc/mini__GP12285.jpg?width=1200&height=750',
+    bio: 'Veteran Polish striker and team leader. Known for his lethal finishing, intelligent movement, and professionalism—still one of the most clinical forwards in Europe.'
+  },
+  'Pedri': {
+    name: 'Pedro González López',
+    img: 'https://i.ytimg.com/vi/OFQedSVXQNo/maxresdefault.jpg',
+    bio: 'Creative midfield maestro. Controls Barcelona’s rhythm with vision, technique, and calmness beyond his years. A future captain in the making.'
+  },
+  'Raphinha': {
+    name: 'Raphael Dias Belloli',
+    img: 'https://static-images.vnncdn.net/vps_images_publish/000001/000003/2025/10/8/mu-pha-ket-120-trieu-euro-mua-raphinha-3114.jpg?width=0&s=OCWo-GYVLZYnSBn8srEG0w',
+    bio: 'Explosive Brazilian winger full of flair and energy. Renowned for his pace, dribbling, and ability to change a game with one run or cross.'
+  },
+  'Yamal': {
+    name: 'Lamine Yamal',
+    img: 'https://ichef.bbci.co.uk/ace/standard/2048/cpsprodpb/b2a0/live/3d279950-beec-11f0-86f6-8f14a1be2b7d.jpg',
+    bio: 'Barcelona’s teenage sensation. Known for fearless dribbling, precise left-footed finishing, and maturity that belies his age. The future of Barça.'
+  },
+  'Joan Garcia': {
+    name: 'Joan García',
+    img: 'https://www.fcbarcelona.com/photo-resources/2025/09/11/aec4b812-6e8a-4251-90b7-d413b4857c9a/_MGA8562.jpg?width=640&height=400',
+    bio: 'Young Spanish goalkeeper with sharp reflexes and composure under pressure. Taking on the challenge of replacing a club legend between the posts.'
+  },
+  'Kounde': {
+    name: 'Jules Koundé',
+    img: 'https://frenchfootballweekly.com/wp-content/uploads/2025/04/Jules-Kounde-it39s-over.jpg',
+    bio: 'Dynamic defender capable of playing as right-back or centre-back. Known for pace, positioning, and calmness when building from the back.'
+  },
+  'Araujo': {
+    name: 'Ronald Araújo',
+    img: 'https://www.fcbarcelona.com/photo-resources/2023/03/20/2f64d8d2-4cac-4d37-bda5-021867d11917/_SG_7904.JPG?width=1200&height=750',
+    bio: 'Uruguayan powerhouse and defensive leader. Fearless in tackles, commanding in the air, and a fan favorite for his commitment to the crest.'
+  },
+  'Cubarsí': {
+    name: 'Pau Cubarsí',
+    img: 'https://cdn.resfu.com/media/img_news/el-defensa-del-fc-barcelona-pau-cubarsi-celebra-su-gol--segundo-del-equipo-blaugrana--durante-el-partido-de-ida-de-las-semifinales-de-la-copa-del-rey-que-fc-barcelona-y-atletico-de-madrid-disputan-este-martes-en-el-estadio-olimpico-lluis-companys--efe.jpg?size=1000x&lossy=1',
+    bio: 'The young Catalan centre-back sensation. Reads the game like a veteran and plays the ball out from the back with incredible maturity.'
+  },
+  'Balde': {
+    name: 'Alejandro Balde',
+    img: 'https://static.srpcdigital.com/styles/1037xauto/public/2025-04/1022561_0.png.webp',
+    bio: 'Lightning-fast left-back who dominates his flank both in defense and attack. Brings width, pace, and energy to every match.'
+  },
+  'DeJong': {
+    name: 'Frenkie de Jong',
+    img: 'https://platform.barcablaugranes.com/wp-content/uploads/sites/21/2025/09/gettyimages-2233197223.jpg?quality=90&strip=all&crop=0.0051229508196755,0,99.989754098361,100',
+    bio: 'Dutch midfield engine. Smooth on the ball, capable of carrying it out of pressure and controlling transitions with intelligence and grace.'
+  },
+  'Rashford': {
+    name: 'Marcus Rashford',
+    img: 'https://thepeoplesperson.com/wp-content/uploads/2025/11/marcus-rashford-fc-barcelona-v-elche-cf-laliga-ea-sports-min.jpg',
+    bio: 'Electric winger and new attacking addition. Adds pace, directness, and a ruthless finishing edge from the left side.'
+  },
+  /* === COACH === */
+  'Hansi Flick': {
+    name: 'Hansi Flick',
+    img: 'https://www.fcbarcelona.com/photo-resources/2024/05/29/1ee8813c-31a7-4e43-87dd-65edaaf6117c/3200x2000_FLICK.png?width=1200&height=750',
+    bio: 'Head coach of FC Barcelona since 2024. Brings German precision and discipline, blending Barça’s attacking DNA with tactical balance.'
+  },
+  /* === SUBSTITUTES === */
+  'Szczesny': {
+    name: 'Wojciech Szczęsny',
+    img: 'https://a.espncdn.com/photo/2025/0318/r1465830_1296x729_16-9.jpg',
+    bio: 'Experienced Polish goalkeeper, providing security and mentorship for the next generation of Barça shot-stoppers.'
+  },
+  'TerStegen': {
+    name: 'Marc-André ter Stegen',
+    img: 'https://www.fcbarcelona.com/photo-resources/2025/05/03/6ef2bb17-1a68-4fad-a6e3-a30208f28619/FOTO-NOTI-TER.jpg?width=1200&height=750',
+    bio: 'Goalkeeping icon known for world-class reflexes and distribution. Recovering leader and fan favorite at Camp Nou.'
+  },
+  'EricGarcia': {
+    name: 'Eric Garcia',
+    img: 'https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_0,w_1024,h_682/c_fill,w_720,ar_3:2,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01k4jh6qvc2ywah00ymp.jpg',
+    bio: 'Homegrown defender noted for intelligence and composure. Reliable option across the backline.'
+  },
+  'Christensen': {
+    name: 'Andreas Christensen',
+    img: 'https://platform.barcablaugranes.com/wp-content/uploads/sites/21/2025/10/gettyimages-2238197309.jpg?quality=90&strip=all&crop=0.0075301204819311%2C0%2C99.984939759036%2C100&w=2400',
+    bio: 'Calm Danish defender who excels in positioning and passing. A steady presence in the defensive rotation.'
+  },
+  'GerardMartin': {
+    name: 'Gerard Martin',
+    img: 'https://media.bongda.com.vn/editor-upload/2025-3-7/do_quoc_phi/7.jpg',
+    bio: 'Promising young right-back from La Masia. Known for energy and willingness to push forward in attack.'
+  },
+  'MarcCasado': {
+    name: 'Marc Casadó',
+    img: 'https://platform.barcablaugranes.com/wp-content/uploads/sites/21/2025/09/gettyimages-2235444005.jpg?quality=90&strip=all&crop=0%2C0.016661112962346%2C100%2C99.966677774075&w=2400',
+    bio: 'Defensive midfielder with excellent tactical awareness and ball recovery skills. A La Masia product ready for senior minutes.'
+  },
+  'MarcBernal': {
+    name: 'Marc Bernal',
+    img: 'https://platform.barcablaugranes.com/wp-content/uploads/sites/21/2025/09/gettyimages-2235441100.jpg?quality=90&strip=all&crop=0%2C0.016661112962346%2C100%2C99.966677774075&w=2400',
+    bio: 'Versatile holding midfielder who reads the game intelligently. Provides balance and control when called upon.'
+  },
+  'FerminLopez': {
+    name: 'Fermín López',
+    img: 'https://platform.barcablaugranes.com/wp-content/uploads/sites/21/2025/10/gettyimages-2242429093.jpg?quality=90&strip=all&crop=0,0.014505366985787,100,99.970989266028',
+    bio: 'Energetic attacking midfielder who loves to press and strike from distance. A spark plug off the bench.'
+  },
+  'Gavi': {
+    name: 'Gavi',
+    img: 'https://www.fcbarcelona.com/photo-resources/2025/02/02/bcb0aee1-e558-4731-ba37-7ebb6726567f/250202_EA023749.JPG?width=1200&height=750',
+    bio: 'Passionate and fearless midfielder. Combines intensity with vision—symbol of the club’s future spirit.'
+  },
+  'DaniOlmo': {
+    name: 'Dani Olmo',
+    img: 'https://www.fcbarcelona.com/photo-resources/2025/10/13/ab52927b-b51c-45c5-8267-a361741acdbe/_MGA7700___.jpg?width=640&height=400',
+    bio: 'Creative playmaker capable of playing across the front line. Brings flair and Spanish international experience.'
+  },
+  'RoonyBardghji': {
+    name: 'Roony Bardghji',
+    img: 'https://www.fichajes.net/sites/default/files/styles/epsa_detail_thumbail/public/2025-09/club-quiere-sacar-roony-bardghji-barcelona-enero.jpg.webp?h=df3c6bf4&itok=IFfdkmNv',
+    bio: 'Young Swedish-Kuwaiti winger known for speed, creativity, and eye for goal. A bright prospect for the future.'
+  },
+  'FerranTorres': {
+    name: 'Ferran Torres',
+    img: 'https://www.fcbarcelona.com/photo-resources/2025/09/22/b8a6cf6b-9f8e-44b2-bcef-9200668c10f5/0M1A9414027-.JPG?width=640&height=400',
+    bio: 'Spanish forward who brings versatility and relentless work rate. A dependable option for both wing and striker roles.'
+  },
+  
+ /* === LEGENDS === */
+ "Lionel Messi": {
+  name: "Lionel Messi",
+  img: "https://www.si.com/.image/c_fill,w_1080,ar_16:9,f_auto,q_auto,g_auto/MTY4MTAyNTc0Nzg3NDA1MDcz/messi-jersey-real-madridjpg.jpg",
+  bio: "Lionel Messi is widely regarded as the greatest footballer of all time. Appearances: 778, Goals: 672, Assists: 305, Titles: 35."
+},
+
+"Xavi": {
+  name: "Xavi Hernandez",
+  img: "https://www.fcbarcelona.com/fcbarcelona/photo/2019/03/12/62f67c7f-28fa-49d4-aa5f-9a0502c46c41/znYiAFfh.jpg",
+  bio: "Xavi Hernandez, midfield maestro known for elite passing and vision. Appearances: 767, Goals: 85, Assists: 182, Titles: 25."
+},
+
+"Iniesta": {
+  name: "Andres Iniesta",
+  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4dc41VmOtGB9n18ThIi-21zhEQ_bOjkFnMKaOyh-DBMyeSm242sxvf-446WmK32stAF8&usqp=CAU",
+  bio: "Andres Iniesta, a genius in midfield with unmatched composure and dribbling. Appearances: 674, Goals: 57, Assists: 140+, Titles: 32."
+},
+
+"Ronaldinho": {
+  name: "Ronaldinho",
+  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbQup3x4jjbIoEwqbjAnH-bmi-JYIsl3EjccQoiVxcXmVQ0qYtZe1P-RYNw4uNVkvGQLWESpDd76AmoucBgNeaCICu9RVv9W_2iIX-tkA&s=10",
+  bio: "Ronaldinho, magical forward known for flair, creativity, and joy. Appearances: 207, Goals: 94, Assists: 70+, Titles: 12."
+},
+
+"Piqué": {
+  name: "Gerard Piqué",
+  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwefMEGlPkudOyyO4hCnKJChyfREOTa7M7HQ&s",
+  bio: "Gerard Piqué, defensive leader and one of Barça's greatest center-backs. Appearances: 616, Goals: 38, Titles: 23."
+},
+
+"Cruyff": {
+  name: "Johan Cruyff",
+  img: "https://thanhnien.mediacdn.vn/Uploaded/game/st.game.thanhnien.vn/image/01TNG/03/cruyffbrac-2116795.jpg",
+  bio: "Johan Cruyff, Total Football pioneer who transformed Barcelona forever. Appearances: 227, Goals: 86 (204 career), Titles: 9."
+},
+
+"Rivaldo": {
+  name: "Rivaldo",
+  img: "https://photo.znews.vn/w660/Uploaded/SgtnRN/2014_03_16/rivaldo1.jpg",
+  bio: "Rivaldo, brilliant forward known for technique, long shots, and creativity. Appearances: 235, Goals: 130, Assists: 50+, Titles: 5."
+},
+
+"Koeman": {
+  name: "Ronald Koeman",
+  img: "https://www.fcbarcelona.com/photo-resources/2019/03/26/02d40d1b-2963-44ed-85c4-3ff229743dd9/UsvYNIFZ.jpg?width=1200&height=750",
+  bio: "Ronald Koeman, legendary defender and set-piece master. Appearances: 354, Goals: 90, Titles: 8."
+},
+
+"Deco": {
+  name: "Deco",
+  img: "https://madhyamamonline.com/h-upload/2023/08/17/2047789-deco-barcelona-1591366862-40626.jpg",
+  bio: "Deco, creative midfielder with elite vision and precision passing. Appearances: 161, Goals: 20, Assists: 45+, Titles: 12."
+},
+
+"Puyol": {
+  name: "Carles Puyol",
+  img: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS45CR52D2XrX38akBl3Echp9nIR87XcjNZxY7aHxwUNgpDf9gatb6pNQ2jhJuQuQCReXGxRblulSj_sTw",
+  bio: "Carles Puyol, iconic captain and heart of Barça's defense. Appearances: 593, Goals: 12, Titles: 20."
+},
+
+"Etoo": {
+  name: "Samuel Eto'o",
+  img: "https://e0.365dm.com/19/09/1600x900/skysports-samuel-etoo-barcelona_4767534.jpg?20190907160622",
+  bio: "Samuel Eto'o, elite striker with world-class finishing. Appearances: 199, Goals: 130, Assists: 40+, Titles: 14."
+},
+
+"Henry": {
+  name: "Thierry Henry",
+  img: "https://i.guim.co.uk/img/static/sys-images/Football/Clubs/Club%20Home/2009/3/11/1236808120478/Thierry-Henry--001.jpg?width=465",
+  bio: "Thierry Henry, dynamic forward with pace, power, and elegance. Appearances: 121, Goals: 49, Assists: 30+, Titles: 3."
+},
+
+"Bojan": {
+  name: "Bojan Krkić",
+  img: "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/fb09/live/b8de2810-f53a-11ef-a372-9f83dba237c1.jpg",
+  bio: "Bojan Krkić, academy prodigy and agile goalscorer. Appearances: 163, Goals: 41, Assists: 19, Titles: 7."
+},
+
+"Thiago": {
+  name: "Thiago Alcântara",
+  img: "https://www.fcbarcelona.com/fcbarcelona/photo/2024/07/08/f97d2908-b082-4144-8dc6-d03e3bdbab4d/FCB-AlavesAlex_pic_2012-11-28fcb-deportivoalaves042.jpg",
+  bio: "Thiago Alcântara, elegant midfielder with dribbling and precision. Appearances: 100, Goals: 11, Assists: 20+, Titles: 9."
+},
+
+"Busquets": {
+  name: "Sergio Busquets",
+  img: "https://www.fcbarcelona.com/fcbarcelona/photo/2023/01/12/345e6af7-57b0-4c25-a450-5b3180cb6110/_SGB0816.jpg",
+  bio: "Sergio Busquets, master of positioning and tactical intelligence. Appearances: 722, Goals: 18, Assists: 45, Titles: 32."
+},
+
+"Neymar": {
+  name: "Neymar Jr.",
+  img: "https://media-cdn-v2.laodong.vn/storage/newsportal/2025/3/1/1470644/Neymar-Barca.jpg",
+  bio: "Neymar Jr., Brazilian superstar known for creativity and flair. Appearances: 186, Goals: 105, Assists: 76, Titles: 10."
+},
+
+"Suarez": {
+  name: "Luis Suárez",
+  img: "https://www.fcbarcelona.com/fcbarcelona/photo/2020/09/06/c7355114-245c-48a3-b5fe-0cea11dc9379/SUAREZ-56-min.jpg",
+  bio: "Luis Suárez, lethal striker and one of the best finishers in club history. Appearances: 283, Goals: 198, Assists: 97, Titles: 13."
+},
+
+"Rakitic": {
+  name: "Ivan Rakitić",
+  img: "https://www.fcbarcelona.com/photo-resources/2019/05/30/3eb2e04e-05ab-4df4-a719-8a9be00a0ff9/cuOKvfLd.jpg?width=1200&height=750",
+  bio: "Ivan Rakitić, smart midfielder with vision and work rate. Appearances: 310, Goals: 35, Assists: 42, Titles: 12."
+},
+
+"Pep": {
+  name: "Pep Guardiola",
+  img: "https://www.mancity.com/features/cruyff-way/assets/8jzjYKho0V/pep-playing-1200x750.webp",
+  bio: "Pep Guardiola, intelligent midfielder and revolutionary Barcelona coach. Appearances: 384, Goals: 11, Assists: 30+, Titles: 16."
+},
+
+"Valdes": {
+  name: "Víctor Valdés",
+  img: "https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/19/cc232208-5255-46ea-a6bd-86ceb1eb3580/4696525.jpg",
+  bio: "Víctor Valdés, iconic goalkeeper known for composure and leadership. Appearances: 535, Clean Sheets: 239, Titles: 21."
+},
+
+"DaniAlves": {
+  name: "Dani Alves",
+  img: "https://images2.minutemediacdn.com/image/upload/c_crop,w_3000,h_1687,x_0,y_353/c_fill,w_1080,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F90min_en_international_web%2F01g4fc8hyp98rmfgm23x.jpg",
+  bio: "Dani Alves, legendary right-back with unmatched energy and creativity. Appearances: 408, Goals: 41, Assists: 101, Titles: 23."
+},
+
+"SergiRoberto": {
+  name: "Sergi Roberto",
+  img: "https://lh7-rt.googleusercontent.com/docsz/AD_4nXeCbl_uudy_J_2vXEtmu88t67E7gHuOoj2N2JrU_PA5EkedgVfMQ_1m8BbdVqGyCdFdMIv_4heP6YbanYODOUEi83SVICQpCJDpTltdNmVrNQKp5JSQ1RPnIlE3NYPLnUti7vSATLJZO7LqrAfP4exQ5ao?key=3uKPEPSJ0U3pOiOwLFzwKg",
+  bio: "Sergi Roberto, versatile midfielder and full-back, Barça captain. Appearances: 360+, Goals: 16, Assists: 40+, Titles: 25."
+},
+
+"JordiAlba": {
+  name: "Jordi Alba",
+  img: "https://monesport.cat/app/uploads/sites/12/2025/10/europapress_5234977_jordi_alba_fc_barcelona_during_the_spanish_championship_liga_football_match1.jpg",
+  bio: "Jordi Alba, elite left-back known for pace and link-up play. Appearances: 459, Goals: 27, Assists: 90+, Titles: 22."
+},
+
+"Pedro": {
+  name: "Pedro Rodríguez",
+  img: "https://imgresizer.tntsports.io/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.tntsports.io/2015/08/11/1658678-35171486-2560-1440.jpg",
+  bio: "Pedro, versatile winger with clutch scoring and high work rate. Appearances: 321, Goals: 87, Assists: 50+, Titles: 20+."
+},
+
+"DavidVilla": {
+  name: "David Villa",
+  img: "https://e0.365dm.com/11/05/2048x1152/David-Villa-Barcelona-Champions-League-final-_2602907.jpg?20110528213652",
+  bio: "David Villa, clinical striker and key piece of the 2011 treble squad. Appearances: 119, Goals: 51, Assists: 21, Titles: 7."
+}
+};
+
+
+function showPlayer(id) {
+  const modal = document.getElementById('playerModal');
+  const player = players[id];
+  document.getElementById('playerName').textContent = player.name;
+  document.getElementById('playerImage').src = player.img;
+  document.getElementById('playerBio').textContent = player.bio;
+  modal.style.display = 'flex';
+  
+  // Optional: sound effect when opening modal
+  const clickSound = new Audio('https://www.myinstants.com/media/sounds/button-click.mp3');
+  clickSound.play();
+}
+
+function closeModal() {
+  document.getElementById('playerModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('playerModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+</script>
+
+<script>
+  // ===== Stadium Image Gallery =====
+  const stadiumImages = [
+  "https://espanaestadios.com/wp-content/uploads/2018/07/barcelona290424a.jpg",  
+  "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcS-bPSIiOE2IqXq7AjE4RmRzQfvOP_eV7x4oNvsfsPYyF5bz_Bq0f0-JtncFMULGm5vKybkxQWGLG9f0FhT" , 
+    "https://www.fcbarcelona.com/photo-resources/2021/12/10/cdb9d8b7-0b54-4bcb-a8e1-44e0ad7a9fdd/mini_7-CAMP-NOU.jpg?width=1200&height=750",
+    "https://media.wired.com/photos/65e9c2531f92e8ba51a879e1/3:2/w_1600,c_limit/ain7_20171213_fcb_vis_futur-camp-nou_campus_aerial_1_night.jpg",
+    "https://the18.com/sites/default/files/feature-images/GZYCydyWoAAzD-9.jpg",
+    "https://wooarchitects.com/wp-content/uploads/2025/05/WOO-architects-Camp-Nou-Stadium-Barcelona.png"
+  ];
+  let currentImage = 0;
+  const imgElement = document.getElementById('stadiumImage');
+
+  function nextImage() {
+    currentImage = (currentImage + 1) % stadiumImages.length;
+    imgElement.style.opacity = 0;
+    setTimeout(() => {
+      imgElement.src = stadiumImages[currentImage];
+      imgElement.style.opacity = 1;
+    }, 500);
+  }
+
+  function prevImage() {
+    currentImage = (currentImage - 1 + stadiumImages.length) % stadiumImages.length;
+    imgElement.style.opacity = 0;
+    setTimeout(() => {
+      imgElement.src = stadiumImages[currentImage];
+      imgElement.style.opacity = 1;
+    }, 500);
+  }
+  setInterval(nextImage, 5000);
+
+ 
+
+  // ===== Animated Stats (optional small effect) =====
+  window.addEventListener('scroll', () => {
+    const stats = document.querySelectorAll('.stat h3');
+    stats.forEach(stat => {
+      if (stat.getBoundingClientRect().top < window.innerHeight && !stat.dataset.counted) {
+        stat.dataset.counted = true;
+        const target = +stat.textContent.replace(/\D/g, '');
+        let count = 0;
+        const speed = target / 100;
+        const update = () => {
+          count += speed;
+          if (count < target) {
+            stat.textContent = Math.floor(count).toLocaleString();
+            requestAnimationFrame(update);
+          } else {
+            stat.textContent = target.toLocaleString();
+          }
+        };
+        update();
+      }
+    });
+  });
+</script>
+
+<script>
+  
+
+  // Hover effect for legends
+  const legendCards = document.querySelectorAll('.legend-card');
+  legendCards.forEach(card => {
+    const info = card.querySelector('.legend-info');
+    card.addEventListener('mouseenter', () => info.style.opacity = '1');
+    card.addEventListener('mouseleave', () => info.style.opacity = '0');
+  });
+</script>
+<script>
+  const podium = document.querySelector('.podium-step');
+
+  window.addEventListener('scroll', () => {
+    const rect = podium.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if(rect.top < windowHeight - 100) {
+      podium.style.transform = 'translateY(0)';
+      podium.style.opacity = '1';
+    }
+  });
+
+  
+
+
+  document.querySelectorAll('.hall-of-fame-player').forEach(player => {
+    // Hover effect
+    player.addEventListener('mouseenter', () => {
+      if(player.dataset.name === "Lionel Messi"){
+        player.style.transform = 'translateY(-20px)';
+        player.style.boxShadow = '0 0 30px gold, 0 0 50px yellow';
+      } else {
+        player.style.transform = 'translateY(-10px)';
+        player.style.boxShadow = '0 0 15px #fff';
+      }
+    });
+    player.addEventListener('mouseleave', () => {
+      player.style.transform = player.dataset.name === "Lionel Messi" ? 'translateY(0)' : 'translateY(0)';
+      player.style.boxShadow = player.dataset.name === "Lionel Messi" ? '0 0 20px gold' : 'none';
+    });
+
+    // Click modal
+    player.addEventListener('click', () => {
+      const name = player.dataset.name;
+      const data = players[name];
+      modalContent.innerHTML = `
+        <h2>${name}</h2>
+        <img src="${data.img}" alt="${name}" style="width:100%; border-radius:10px; margin-bottom:15px;">
+        <p>${data.bio}</p>
+      `;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if(e.target === modal) modal.style.display = 'none';
+  });
+</script>
+
+<!-- JS Hover Effects -->
+<script>
+  const hofCards = document.querySelectorAll('.hof-card');
+
+  hofCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const stats = card.querySelector('.hof-stats');
+      stats.style.display = 'block';
+      card.style.transform = 'scale(1.05)';
+    });
+    card.addEventListener('mouseleave', () => {
+      const stats = card.querySelector('.hof-stats');
+      stats.style.display = 'none';
+      card.style.transform = 'scale(1)';
+    });
+  });
+
+  // Optional auto-scroll effect
+  const carousel = document.querySelector('.hof-carousel');
+  setInterval(() => {
+    carousel.scrollBy({ left: 1, behavior: 'smooth' });
+  }, 20);
+</script>
+<script>
+  // Animate elements on scroll
+  const faders = document.querySelectorAll('.fade-up');
+
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+<script>
+function animateCount(id, end, duration) {
+  let element = document.getElementById(id);
+  let start = 0;
+  let range = end - start;
+  let step = range / (duration / 16);
+
+  let counter = setInterval(() => {
+    start += step;
+    if (start >= end) {
+      start = end;
+      clearInterval(counter);
+    }
+    element.textContent = Math.floor(start);
+  }, 16);
+}
+
+let trophiesAnimated = false;
+window.addEventListener("scroll", () => {
+  const trophySection = document.querySelector("#trophies");
+  const rect = trophySection.getBoundingClientRect();
+
+  if (!trophiesAnimated && rect.top < window.innerHeight - 100) {
+    animateCount("laliga", 28, 2000);
+animateCount("copaDelRey", 32, 2000);
+animateCount("supercopa", 15, 2000);
+animateCount("copadelaliga", 2, 2000);
+animateCount("evaDuarte", 3, 2000);
+
+animateCount("ucl", 5, 2000);
+animateCount("supercup", 5, 2000);
+animateCount("clubWorldcup", 3, 2000);
+animateCount("cupWinners", 4, 2000);
+animateCount("fairsCup", 3, 2000);
+animateCount("latinCup", 2, 2000);
+
+
+    trophiesAnimated = true;
+  }
+});
+
+</script>
+
+<script>
+  // ===== ACTIVE NAV LINK ON SCROLL =====
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ===== BACK TO TOP BUTTON =====
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+// ===== LOADING SCREEN =====
+document.body.style.overflow = "hidden"; // Lock scroll
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+
+
+    document.getElementById("loadingScreen").style.display = "none";
+    document.body.style.overflow = "auto"; // Unlock scroll
+  }, 3000);
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>
