@@ -2,11 +2,6 @@
 
 A responsive FC Barcelona fan website showcasing players, legends, trophies, and the club’s history through interactive and animated web elements.
 
-🌐 Live Demo
-
-👉 Live Website:
-https://YOURUSERNAME.github.io/fc-barcelona-website/
-(Replace YOURUSERNAME with your GitHub username)
 
 📌 Project Overview
 
